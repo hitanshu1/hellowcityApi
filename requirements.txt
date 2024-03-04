@@ -1,0 +1,4 @@
+aioodbc
+aiohttp
+aiohttp_cors
+pyodbc
