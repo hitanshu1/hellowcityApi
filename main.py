@@ -58,6 +58,7 @@ cors = aiohttp_cors.setup(
             allow_credentials=True,
             expose_headers="*",
             allow_headers="*",
+            
         )
     },
 )
