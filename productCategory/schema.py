@@ -13,8 +13,9 @@ class ProductCategorySchema(Schema):
     vendorID = fields.Int(required=True)
     menuID = fields.Int(required=True)
     status=fields.Str(allow_none=True)
+    createdBy=fields.Int(allow_none=True)
     createdAt = DateTimeToStringField(required=True)
-    updatedAt = DateTimeToStringField(required=True)
+    updatedAt = DateTimeToStringField(allow_none=True)
 
 
 

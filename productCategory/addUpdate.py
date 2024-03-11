@@ -22,7 +22,7 @@ async def _addUpdateFn(toAdd, request:web_request.Request,db_pool:aioodbc.Pool):
 
     try:    
         data = await request.post()
-        values = (data.get("name"),data.get('status'),data.get('vendorID'),data.get('createdBy'))
+        values = (data.get("name"),data.get('status'),data.get('vendorID'),data.get('menuID'),data.get('createdBy'))
 
         if not toAdd:
             values += (data.get("id"),)
@@ -31,10 +31,10 @@ async def _addUpdateFn(toAdd, request:web_request.Request,db_pool:aioodbc.Pool):
             query = "INSERT INTO productCategory "
 
         if toAdd:
-            query += "(name, status,vendorID, createdBy) "
-            query += "VALUES (?, ?,?, ?) "
+            query += "(name, status,vendorID,menuID, createdBy) "
+            query += "VALUES (?, ?,?, ?,?) "
         else:
-            query += "name=?, status=?,vendorID=?,createdBy=? WHERE id=?"
+            query += "name=?, status=?,vendorID=?menuID=?,createdBy=? WHERE id=?"
         
         async with db_pool.acquire() as cnxn:
             async with cnxn.cursor() as cursor:

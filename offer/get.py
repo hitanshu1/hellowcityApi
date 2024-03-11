@@ -6,7 +6,6 @@ from aiohttp import web,web_request
 from access_token import AccessToken
 from apiResponse import ApiResponse
 from offer.schema import OfferSchema
-from product.schema import ProductSchema
 
 
 @AccessToken.token_required

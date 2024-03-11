@@ -33,7 +33,7 @@ class VendorSchema(Schema):
     categoryID=fields.Int(allow_none=True)
     hidePhotos=fields.Int(allow_none=True)
     logoID=fields.Int(allow_none=True)
-    upiInfoID=fields.Int(allow_none=True)
+    upiID=fields.Str(allow_none=True)
     taxInfoID=fields.Int(allow_none=True)
     status=fields.Str(allow_none=True)
     sectionId=fields.Int(allow_none=True)

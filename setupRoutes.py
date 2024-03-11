@@ -9,9 +9,9 @@ from ping import pingFn
 from Login.login import loginFn
 from Login.spResetPwd_api import update_pwd
 from Login.spResetPwd_api import request_reset_password
-from product.addUpdate import addProduct, updateProduct
-from product.delete import deleteProduct
-from product.get import getProduct
+from products.addUpdate import addProduct, updateProduct
+from products.delete import deleteProduct
+from products.get import getProduct
 from productCategory.addUpdate import addProductCategory, updateProductCategory
 from productCategory.delete import deleteProductCategory
 from productCategory.get import getProductCategory

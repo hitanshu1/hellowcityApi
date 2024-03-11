@@ -4,6 +4,7 @@ aiohttp_cors
 pyodbc
 pyjwt
 marshmallow
+click
 
 
 
