@@ -1,4 +1,6 @@
 from Files.Upload import uploadFileFn
+from appSettings.addUpdate import addAppSetting, updateAppSetting
+from appSettings.get import getAppSettings
 from offer.addUpdate import addOfferFn, updateOfferFn
 from offer.delete import deleteOffer
 from offer.get import getOffer
@@ -18,6 +20,8 @@ from productCategory.get import getProductCategory
 from productMenu.addUpdate import addProductMenu, updateProductMenu
 from productMenu.delete import deleteProductMenu
 from productMenu.get import getProductMenu
+from stuff.addUpdate import addStuffFn, updateStuffFn
+from stuff.get import getStuff
 from userCartProduct.addUpdate import addProductToCart, updateProductOfCart
 from userCartProduct.delete import deleteAllCartProduct
 from userCartProduct.get import getUserCartProducts
@@ -26,6 +30,7 @@ from users.get import getUsers
 from vendor.addUpdate import addVendor, updateVendor
 from vendor.delete import deleteVendor
 from vendor.get import getVendor
+from vendor.myVendors import getMyVendors
 from vendorCategory.addUpdate import addVendorCategory, updateVendorCategory
 from vendorCategory.delete import deleteVendorCategory
 from vendorCategory.get import getVendorCategory
@@ -80,6 +85,10 @@ routes = {
     "/api/updateVendor": {
         "handler": updateVendor,
         "methods": ["PUT"],
+    },
+    "/api/getMyVendors": {
+        "handler": getMyVendors,
+        "methods": ["GET"],
     },
     "/api/getVendor": {
         "handler": getVendor,
@@ -201,6 +210,30 @@ routes = {
     "/api/deleteAllCartProduct": {
         "handler": deleteAllCartProduct,
         "methods": ["DELETE"],
+    },
+    "/api/addAppSetting": {
+        "handler": addAppSetting,
+        "methods": ["POST"],
+    },
+    "/api/updateAppSetting": {
+        "handler": updateAppSetting,
+        "methods": ["PUT"],
+    },
+    "/api/getAppSettings": {
+        "handler": getAppSettings,
+        "methods": ["GET"],
+    },
+    "/api/addStuff": {
+        "handler": addStuffFn,
+        "methods": ["POST"],
+    },
+    "/api/updateStuff": {
+        "handler": updateStuffFn,
+        "methods": ["PUT"],
+    },
+    "/api/getStuff": {
+        "handler": getStuff,
+        "methods": ["GET"],
     },
 
 }

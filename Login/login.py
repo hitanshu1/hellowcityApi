@@ -6,6 +6,7 @@ from aiohttp import web, web_request
 
 
 from access_token import AccessToken
+from apiResponse import ApiResponse
 
 
 
@@ -35,12 +36,12 @@ async def loginFn(request:web_request.Request, db_pool:aioodbc.Pool):
                     }
                     print(user_details)
                     # result_json = json.dumps(user_details, indent=4, default=str)
-                    return web.json_response(user_details, content_type="application/json")
+                    return ApiResponse.message(True,user_details,'Login successfully')
                 else:
-                    return web.json_response({'error': 'Invalid email or password'}, status=401)
+                    return ApiResponse.message(False,{},'Invalid email or password')
     except Exception as e:
         # Handle exceptions
-        return await mssqlExceptionManager(e)
-
+        return ApiResponse.message(False,{},str(e))
+    
 
     
